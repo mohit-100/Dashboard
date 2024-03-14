@@ -131,7 +131,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/data')
+    axios.get('https://dashboard-server-two.vercel.app/api/data')
       .then(response => {
         setData(response.data);
 
