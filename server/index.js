@@ -7,11 +7,11 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const corsOptions = {
-  origin: 'https://dashboard-5ubc.vercel.app', // Replace with your frontend domain
-};
-
-app.use(cors(corsOptions));
+app.use(cors({
+  origin:["https://dashboard-5ubc.vercel.app"],
+  methods:["GET"],
+  credentials:true
+}));
 app.use(express.json());
 
 // MongoDB connection setup - replace 'your-mongodb-uri' with your MongoDB connection URI
