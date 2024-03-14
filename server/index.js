@@ -2,15 +2,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-//require('dotenv').config();
+const DataModel = require('./model/datashcema')
+
 require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin:["https://dashboard-5ubc.vercel.app"],
+  methods:["GET"],
+  credentials:true
+}));
 app.use(express.json());
 
-// MongoDB connection setup - replace 'your-mongodb-uri' with your MongoDB connection URI
 mongoose.connect(process.env.MONGO_URL).then(()=>{
   console.log("MongoDB Connected");
 }).catch((err)=>{
@@ -20,17 +24,19 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
 
 
 
-// API endpoint to get data
+
+
+
 app.get('/api/data', async (req, res) => {
   try {
-    // Access the collection directly and retrieve all documents
-    const data = await mongoose.connection.db.collection('datas').find({}).toArray();
+    const data = await DataModel.find({});
     res.json(data);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

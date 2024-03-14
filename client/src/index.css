@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* <input
+id="country"
+type="text"
+class="appearance-none relative block w-64 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+placeholder="Enter country"
+onChange={(e) => handleFilterChange('country', e.target.value)} */
+
+
+/* {data.slice(0, 1).map((item, id) => {
+        const { sector, topic, intensity } = item;
+
+        return (
+           <div key={id} className="pt-[25px] px-[25px] bg-[#F8F9FC]">
+            <div className='flex items-center justify-between'>
+              <h1 className='text-[#5a5c69] text-[28px] leading-[34px] font-normal cursor-pointer'></h1>
+               </div>
+               <div className='grid grid-cols-4 gap-[30px] mt-[25px] pb-[15px]'>
+                <div className=' mr-[10px] h-[100px] rounded-[8px] bg-white border-l-[4px] border-[#4E73DF]'>
+                  <div className='pl-[10px]'>
+                    <h2 className='text-[#B589DF] text-[20px] leading-[17px] font-bold mr-[5px]'> {sector}</h2>
+                    <h1 className='text-[20px] leading-[24px] font-bold text-[#5a5c69] mt-[5px]'>{topic}</h1>
+                    <p className='text-[20px] pl-[1-px] leading-[24px] font-bold text-[#5a5c69] mt-[5px]'>{intensity}</p>
+                  </div>
+                   
+                </div>
+               </div>
+            </div>
+        );
+      })} */
