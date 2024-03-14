@@ -131,7 +131,7 @@ function App() {
 
 
   useEffect(() => {
-    axios.get('http://dashboard-rosy-theta.vercel.app/api/data')
+    axios.get('http://dashboard-server-two.vercel.app/api/data')
       .then(response => {
         setData(response.data);
 
